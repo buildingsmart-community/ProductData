@@ -1,0 +1,233 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcPropertyTableValue</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 11 index3 3 index4 8 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.html#8.11.3.9");
+//-->
+</script>
+
+<h4 class="num">IfcPropertyTableValue</h4>
+<a href="../../views/construction-objects-data-view/index.html" ><img src="../../../img/view-construction-objects-data-view.png" title="Construction Objects Data View"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-de.png" /></td><td><b>Merkmal mit Tabellenwert</b></td></tr>
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Property Table Value</b></td></tr>
+<tr><td><img src="../../../img/locale-fr.png" /></td><td><b>Propriété à valeurs tabulaires</b></td></tr>
+</table>
+</details>
+<details open="open"><summary>Change log</summary><table class="gridtable">
+<tr><th>Item</th><th>SPF</th><th>XML</th><th>Change</th><th>Description</th></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc2x3-to-ifc4/index.html">IFC2x3 to IFC4</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefiningValues</td><td></td><td></td><td>MODIFIED</td><td>Instantiation changed to <i>OPTIONAL</i>. <br/></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefinedValues</td><td></td><td></td><td>MODIFIED</td><td>Instantiation changed to <i>OPTIONAL</i>. <br/></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurveInterpolation</td><td></td><td></td><td>ADDED</td><td></td></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4-addendum-1/index.html">IFC4 Addendum 1</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HasConstraints</td><td></td><td></td><td>ADDED</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HasApprovals</td><td></td><td></td><td>ADDED</td><td></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p><span class="self-ref">IfcPropertyTableValue</span> is a property with a value range defined by a property object which has two lists of (numeric or descriptive) values assigned. The values specify a table with two columns. The defining values provide the first column and establish the scope for the defined values (the second column). An optional <i>Expression</i> attribute may give the equation used for deriving the range value, which is for information purposes only.</p>
+<p>The <span class="self-ref">IfcPropertyTableValue</span> defines a defining/defined property value combination for which the property name, the table with defining and defined values with measure type (and optional the units for defining and defined values) are given.</p>
+<blockquote class="note">
+<p>NOTE  The <span class="self-ref">IfcPropertyTableValue</span> only captures properties that can be expressed by a table with two columns. Use IfcPropertyReferenceValue with the PropertyReference being an IfcTable to express all those properties that require a table with tree or more columns.</p>
+</blockquote>
+<p>The units are handled by the <i>DefiningUnit</i> and <i>DefinedUnit</i> attributes, see Table 1 for an example of a table value property:</p>
+</details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>C</th></tr>
+<tr><td>3</td><td>DefiningValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+List of defining values, which determine the defined values. This list shall have unique values only.
+
+
+</td><td>X</td></tr>
+<tr><td>4</td><td>DefinedValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+Defined values which are applicable for the scope as defined by the defining values.
+
+
+</td><td>X</td></tr>
+<tr><td>5</td><td>Expression</td><td><a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a></td><td>? </td><td>
+Expression for the derivation of defined values from the defining values, the expression is given for information only, i.e. no automatic processing can be expected from the expression.
+</td><td>X</td></tr>
+<tr><td>6</td><td>DefiningUnit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the defining values, if not given, the default value for the measure type (given by the TYPE of the defining values) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+<tr><td>7</td><td>DefinedUnit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the defined values, if not given, the default value for the measure type (given by the TYPE of the defined values) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+<tr><td>8</td><td>CurveInterpolation</td><td><a href="../../ifcpropertyresource/lexical/ifccurveinterpolationenum.html">IfcCurveInterpolationEnum</a></td><td>? </td><td>
+Interpolation of the curve between two defining and defined values that are provided. if not provided a linear interpolation is assumed.
+
+
+</td><td>X</td></tr>
+</table>
+</details>
+<details open="open"><summary>Formal Propositions</summary><table class="propositions">
+<tr><th>Rule</th><th>Description</th></tr>
+<tr><td>WR21</td><td>Either both <i>DefiningValues</i> and <i>DefinedValues</i> are not provided, or the number of members in the list of <i>DefiningValues</i> shall be the same as the number of members in the list of <i>DefinedValues</i>.
+</td></tr>
+<tr><td>WR22</td><td>If <i>DefiningValues</i> are provided, then all values within the list of <i>DefiningValues</i> shall have the same measure type.
+</td></tr>
+<tr><td>WR23</td><td>If <i>DefinedValues</i> are provided, then all values within the list of <i>DefinedValues</i> shall have the same measure type.
+</td></tr>
+</table>
+
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcpropertytablevalue.png" usemap="#f"/>
+<map name="f">
+<area shape="rect" coords="30,54,242,66" href="../../../schema/ifcpropertyresource/lexical/ifcsimpleproperty.html" alt="IfcSimpleProperty" />
+<area shape="rect" coords="18,30,254,42" href="../../../schema/ifcpropertyresource/lexical/ifcproperty.html" alt="IfcProperty" />
+<area shape="rect" coords="6,6,266,18" href="../../../schema/ifcpropertyresource/lexical/ifcpropertyabstraction.html" alt="IfcPropertyAbstraction" />
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>C</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcpropertyabstraction.html">IfcPropertyAbstraction</a></i></td></tr>
+<tr><td></td><td><i>HasExternalReferences</i></td><td><a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a><br/>@RelatedResourceObjects</td><td>S[0:?]</td><td>Reference to an external reference, e.g. library, classification, or document information, that is associated to the property definition.
+
+
+</td><td></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcproperty.html">IfcProperty</a></i></td></tr>
+<tr><td>1</td><td>Name</td><td><a href="../../ifcmeasureresource/lexical/ifcidentifier.html">IfcIdentifier</a></td><td></td><td>
+Name for this property. This label is the significant name string that defines the semantic meaning for the property.
+</td><td>X</td></tr>
+<tr><td>2</td><td>Description</td><td><a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a></td><td>? </td><td>
+Informative text to explain the property.
+</td><td>X</td></tr>
+<tr><td></td><td><i>PartOfPset</i></td><td><a href="../../ifckernel/lexical/ifcpropertyset.html">IfcPropertySet</a><br/>@HasProperties</td><td>S[0:?]</td><td>Reference to the <a href="../../ifckernel/lexical/ifcpropertyset.html">IfcPropertySet</a> by which the <span class="self-ref">IfcProperty</span> is referenced.
+
+
+</td><td></td></tr>
+<tr><td></td><td><i>PartOfComplex</i></td><td><a href="../../ifcpropertyresource/lexical/ifccomplexproperty.html">IfcComplexProperty</a><br/>@HasProperties</td><td>S[0:?]</td><td>Reference to the <a href="../../ifcpropertyresource/lexical/ifccomplexproperty.html">IfcComplexProperty</a> in which the <span class="self-ref">IfcProperty</span> is contained.
+
+
+</td><td></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a></i></td></tr>
+<tr><td colspan="6"><a href="../../ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a></td></tr>
+<tr><td>3</td><td>DefiningValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+List of defining values, which determine the defined values. This list shall have unique values only.
+
+
+</td><td>X</td></tr>
+<tr><td>4</td><td>DefinedValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+Defined values which are applicable for the scope as defined by the defining values.
+
+
+</td><td>X</td></tr>
+<tr><td>5</td><td>Expression</td><td><a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a></td><td>? </td><td>
+Expression for the derivation of defined values from the defining values, the expression is given for information only, i.e. no automatic processing can be expected from the expression.
+</td><td>X</td></tr>
+<tr><td>6</td><td>DefiningUnit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the defining values, if not given, the default value for the measure type (given by the TYPE of the defining values) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+<tr><td>7</td><td>DefinedUnit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the defined values, if not given, the default value for the measure type (given by the TYPE of the defined values) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+<tr><td>8</td><td>CurveInterpolation</td><td><a href="../../ifcpropertyresource/lexical/ifccurveinterpolationenum.html">IfcCurveInterpolationEnum</a></td><td>? </td><td>
+Interpolation of the curve between two defining and defined values that are provided. if not provided a linear interpolation is assumed.
+
+
+</td><td>X</td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a>&quot; type=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a>&quot; substitutionGroup=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;DefiningValues&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot; maxOccurs=&quot;unbounded&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:itemType&quot; fixed=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:cType&quot; fixed=&quot;list-unique&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:arraySize&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;DefinedValues&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot; maxOccurs=&quot;unbounded&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:itemType&quot; fixed=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:cType&quot; fixed=&quot;list&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:arraySize&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;DefiningUnit&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;DefinedUnit&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;Expression&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;CurveInterpolation&quot; type=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifccurveinterpolationenum.html">IfcCurveInterpolationEnum</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/xs:extension&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcPropertyTableValue<br/>
+&nbsp;<span class="keyword">SUBTYPE OF</span> (<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>)<b>;</b><br/>
+&nbsp;&nbsp;DefiningValues : <span class="keyword">OPTIONAL</span> <span class="keyword">LIST</span> [1:?] <span class="keyword">OF</span> <span class="keyword">UNIQUE</span> <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>;<br/>
+&nbsp;&nbsp;DefinedValues : <span class="keyword">OPTIONAL</span> <span class="keyword">LIST</span> [1:?] <span class="keyword">OF</span> <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>;<br/>
+&nbsp;&nbsp;Expression : <span class="keyword">OPTIONAL</span> <a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a>;<br/>
+&nbsp;&nbsp;DefiningUnit : <span class="keyword">OPTIONAL</span> <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>;<br/>
+&nbsp;&nbsp;DefinedUnit : <span class="keyword">OPTIONAL</span> <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>;<br/>
+&nbsp;&nbsp;CurveInterpolation : <span class="keyword">OPTIONAL</span> <a href="../../ifcpropertyresource/lexical/ifccurveinterpolationenum.html">IfcCurveInterpolationEnum</a>;<br/>
+&nbsp;<span class="keyword">WHERE</span><br/>
+&nbsp;&nbsp;WR21 : (NOT(EXISTS(DefiningValues)) AND NOT(EXISTS(DefinedValues)))<br/>
+OR (SIZEOF(DefiningValues) = SIZEOF(DefinedValues));<br/>&nbsp;&nbsp;WR22 : NOT(EXISTS(DefiningValues)) OR <br/>
+(SIZEOF(QUERY(temp &lt;* SELF.DefiningValues | TYPEOF(temp) &lt;&gt; TYPEOF(SELF.DefiningValues[1])<br/>
+)) = 0);<br/>&nbsp;&nbsp;WR23 : NOT(EXISTS(DefinedValues)) OR <br/>
+(SIZEOF(QUERY(temp &lt;* SELF.DefinedValues | TYPEOF(temp) &lt;&gt; TYPEOF(SELF.DefinedValues[1])<br/>
+)) = 0);<br/><span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcpropertyresource/diagram_0000.html" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+<details><summary>JSON Specification</summary><div class="xsd"><code class="xsd">public class <a href="../../ifcpropertyresource/lexical/ifcpropertytablevalue.html">IfcPropertyTableValue</a> extends <a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a><br/>
+{<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>[] DefiningValues;<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>[] DefinedValues;<br/>
+&nbsp;private string Expression;<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a> DefiningUnit;<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a> DefinedUnit;<br/>
+&nbsp;private <a href="../../ifcpropertyresource/lexical/ifccurveinterpolationenum.html">IfcCurveInterpolationEnum</a> CurveInterpolation;<br/>
+}<br/>
+</code></div></details>
+</section>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifcpropertytablevalue:%22" target="_blank" ><img src="../../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../../link/ifcpropertytablevalue.html" target="_blank" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

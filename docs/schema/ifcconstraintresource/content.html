@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>IfcConstraintResource</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 3 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-8.html#8.3");
+//-->
+</script>
+
+<h2 class="std">8.3 IfcConstraintResource</h2>
+<h3 class="std">8.3.1 Schema Definition</h3>
+<p>The <i>IfcConstraintResource</i> schema provides for the specification of constraints (<a href="../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a>) that may be applied to any object that is a subtype of <a href="../ifckernel/lexical/ifcobjectdefinition.html">IfcObjectDefinition</a> or <a href="../ifckernel/lexical/ifcpropertydefinition.html">IfcPropertyDefinition</a> (through the provision of the relationship class <i>IfcRelAssociatesConstraint</i>). Also, constraints may be applied to specific resource objects, such as an <a href="../ifcpropertyresource/lexical/ifcproperty.html">IfcProperty</a> (through the provision of the relationship class <i>IfcResourceConstraintRelationship</i>).</p>
+<p>A grade may be set for the constraint that establishes whether it is a hard constraint (must be satisfied), a soft constraint (should be satisfied) or simply advisory.</p>
+<p>A constraint must be named and may optionally have one or more sources within which it is defined or from which it is taken. Additionally, a constraint may optionally be assigned a creating actor, creation date and a description.</p>
+<p>Constraints may be either qualitative (an objective constraint) or quantitative (a measured constraint or metric). A qualifier can be applied to an objective constraint that determines the purpose for which it is applied. It may be applied to define the constraining values beyond which building codes may be violated or to limit the selectable range of values as in a specification (for example, value of A must be greater than A but less than B). Several possible purposes are provided through an enumeration.</p>
+<p>A measured constraint or metric defines the actual value or values of a constraint. Values can be defined in terms of a benchmark requirement which sets the intent of the constraint, for example, whether the benchmark is greater than (&gt;), or less than (&lt;). The value of a constraint may be defined according to a number of data types that are available through a select mechanism.</p>
+<blockquote class="example">
+<p>EXAMPLE  A constraint advised by a manufacturer beyond which maintenance must be undertaken on a pump might be qualified as a 'TriggerCondition', named 'PumpMaintenanceCondition', have as its source 'ManufacturerData' and be graded as 'Advisory'. It could have as a single value 10\\\\\\\\\\\\\\\\\\\\\\\\\\\\\^-2 / sec as the frequency of vibration and have a benchmark of 'GreaterThanOrEqualTo'.</p>
+</blockquote>
+
+
+<p><a href="../../annex/annex-d/ifcconstraintresource/index.html" ><img src="../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifcconstraintresource:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/ifcconstraintresource.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

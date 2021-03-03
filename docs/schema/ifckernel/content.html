@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>IfcKernel</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 5 index2 1 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-5.html#5.1");
+//-->
+</script>
+
+<h2 class="std">5.1 IfcKernel</h2>
+<h3 class="std">5.1.1 Schema Definition</h3>
+<p>The schema <i>IfcKernel</i> defines the most abstract part or core part of the specification. It captures general constructs, that are basically founded by their different semantic meaning in common understanding of an object model, like object, property and relationship. Those are then specialized into non-AEC/FM specific constructs, like product, process, control and resource, which form the main entry points for the next level within the schema architecture, the Core Extension layer.</p>
+<p>The <i>IfcKernel</i> also specifies the basic attributes and relationships, such as relative location of products in space, sequence of processes in time, or general purpose grouping and nesting mechanism. It also lays the foundation of extensibility of specification by providing:</p>
+<p>\X\X\\\\\\* type object definitions;
+\X\X\\\\\\* property set template definitions.</p>
+<h4>5.1.1.1 Root definition</h4>
+<p>Each entity defined outside of the Resource layer of the schema architecture inherits directly or indirectly from the <a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a> entity. <a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a> provides for the fundamental capabilities of:</p>
+<p>\X\X\\\\\\* optional ownership and change information
+\X\X\X\X\X\X\X\X\\\\\\* object definitions are the generalization of any semantically treated thing (or item) within the IFC model.
+\X\X\\\\\\* property definitions are the generalization of all characteristics that may be assigned to object definitions.</p>
+<h4>5.1.1.2 Object definitions</h4>
+<p>An object definition is the abstract supertype, <a href="../ifckernel/lexical/ifcobjectdefinition.html">IfcObjectDefinition</a>, and stands for all physically tangible items, such as wall, beam or covering, physically existing items, such as spaces, or conceptual items, such as grids or virtual boundaries. It also stands for processes such as work tasks, for controls such as cost items, for resources such as labor resource, or for actors such as persons involved in the design process.</p>
+<p>Object definitions are specialized into object occurrences, <a href="../ifckernel/lexical/ifcobject.html">IfcObject</a>, indicating any individual object in space, time or another representation context, into object types, <a href="../ifckernel/lexical/ifctypeobject.html">IfcTypeObject</a> indicating the common definitions as a type, or article that are identical for all object occurrences, and basic project or library context, <a href="../ifckernel/lexical/ifccontext.html">IfcContext</a>.</p>
+<p>An object and object type gets its information from the relationships in which it is involved. This includes the definition relationship to property information, or the typing relationship to assign an underlying object type to an object.</p>
+<h4>5.1.1.3 Relationship definitions</h4>
+<p>Relationships are predominately being defined as the objectified relationship, <a href="../ifckernel/lexical/ifcrelationship.html">IfcRelationship</a>. The objectified relationship handles relationships among objects. This allows to keep relationship specific properties directly at the relationship object and to uncouple the relationship semantics from the object attributes.</p>
+<p>The introduction of the objectified relationships also allows the development of a separate subtype tree for relationship semantics.</p>
+<h4>5.1.1.4 Property definition</h4>
+<p>The property definition, <a href="../ifckernel/lexical/ifcpropertydefinition.html">IfcPropertyDefinition</a>, is the generalization of all characteristics of objects. Shared among multiple object instances, it reflects the specific information of an object type, but it may also represent the occurrence information of the actual object in the project context, if it is assigned only to a single object instance.</p>
+<p>The property definition gets applied to the objects using the concept of relationships.</p>
+<h4>5.1.1.5 Object entity subtype tree</h4>
+<p>There are six fundamental entity types in the IFC model, which are all derived from <a href="../ifckernel/lexical/ifcobject.html">IfcObject</a>.</p>
+<p><a href="../../annex/annex-d/ifckernel/index.html" ><img src="../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifckernel:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/ifckernel.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

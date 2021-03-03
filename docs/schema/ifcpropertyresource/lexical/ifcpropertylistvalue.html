@@ -1,0 +1,165 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcPropertyListValue</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 11 index3 3 index4 6 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.html#8.11.3.7");
+//-->
+</script>
+
+<h4 class="num">IfcPropertyListValue</h4>
+<a href="../../views/construction-objects-data-view/index.html" ><img src="../../../img/view-construction-objects-data-view.png" title="Construction Objects Data View"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-de.png" /></td><td><b>Merkmal mit Listenwert</b></td></tr>
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Property List Value</b></td></tr>
+<tr><td><img src="../../../img/locale-fr.png" /></td><td><b>Propriété à liste de valeurs</b></td></tr>
+</table>
+</details>
+<details open="open"><summary>Change log</summary><table class="gridtable">
+<tr><th>Item</th><th>SPF</th><th>XML</th><th>Change</th><th>Description</th></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc2x3-to-ifc4/index.html">IFC2x3 to IFC4</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListValues</td><td></td><td></td><td>MODIFIED</td><td>Instantiation changed to <i>OPTIONAL</i>. <br/></td></tr>
+<td colspan=5><b><a href="../../../annex/annex-f/ifc4-addendum-1/index.html">IFC4 Addendum 1</a></b></td>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../../schema/ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HasConstraints</td><td></td><td></td><td>ADDED</td><td></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HasApprovals</td><td></td><td></td><td>ADDED</td><td></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p>An <span class="self-ref">IfcPropertyListValue</span> defines a property that has several (numeric or descriptive) values assigned, these values are given by an ordered list. It defines a property - list value combination for which the property <i>Name</i>, an optional <i>Description</i>, the optional <i>ListValues</i> with measure type and optionally an <i>Unit</i> is given. An <span class="self-ref">IfcPropertyListValue</span> is a list of values. The order in which values appear is significant. All list members shall be of the same type.</p>
+<p>The unit is handled by the <i>Unit</i> attribute, see Table 1 for an example of a list property:</p>
+</details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>C</th></tr>
+<tr><td>3</td><td>ListValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+List of property values.
+
+
+</td><td>X</td></tr>
+<tr><td>4</td><td>Unit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the list values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+</table>
+</details>
+<details open="open"><summary>Formal Propositions</summary><table class="propositions">
+<tr><th>Rule</th><th>Description</th></tr>
+<tr><td>WR31</td><td>All values within the list of values shall be of the same measure type.
+</td></tr>
+</table>
+
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcpropertylistvalue.png" usemap="#f"/>
+<map name="f">
+<area shape="rect" coords="30,54,242,66" href="../../../schema/ifcpropertyresource/lexical/ifcsimpleproperty.html" alt="IfcSimpleProperty" />
+<area shape="rect" coords="18,30,254,42" href="../../../schema/ifcpropertyresource/lexical/ifcproperty.html" alt="IfcProperty" />
+<area shape="rect" coords="6,6,266,18" href="../../../schema/ifcpropertyresource/lexical/ifcpropertyabstraction.html" alt="IfcPropertyAbstraction" />
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>C</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcpropertyabstraction.html">IfcPropertyAbstraction</a></i></td></tr>
+<tr><td></td><td><i>HasExternalReferences</i></td><td><a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a><br/>@RelatedResourceObjects</td><td>S[0:?]</td><td>Reference to an external reference, e.g. library, classification, or document information, that is associated to the property definition.
+
+
+</td><td></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcproperty.html">IfcProperty</a></i></td></tr>
+<tr><td>1</td><td>Name</td><td><a href="../../ifcmeasureresource/lexical/ifcidentifier.html">IfcIdentifier</a></td><td></td><td>
+Name for this property. This label is the significant name string that defines the semantic meaning for the property.
+</td><td>X</td></tr>
+<tr><td>2</td><td>Description</td><td><a href="../../ifcmeasureresource/lexical/ifctext.html">IfcText</a></td><td>? </td><td>
+Informative text to explain the property.
+</td><td>X</td></tr>
+<tr><td></td><td><i>PartOfPset</i></td><td><a href="../../ifckernel/lexical/ifcpropertyset.html">IfcPropertySet</a><br/>@HasProperties</td><td>S[0:?]</td><td>Reference to the <a href="../../ifckernel/lexical/ifcpropertyset.html">IfcPropertySet</a> by which the <span class="self-ref">IfcProperty</span> is referenced.
+
+
+</td><td></td></tr>
+<tr><td></td><td><i>PartOfComplex</i></td><td><a href="../../ifcpropertyresource/lexical/ifccomplexproperty.html">IfcComplexProperty</a><br/>@HasProperties</td><td>S[0:?]</td><td>Reference to the <a href="../../ifcpropertyresource/lexical/ifccomplexproperty.html">IfcComplexProperty</a> in which the <span class="self-ref">IfcProperty</span> is contained.
+
+
+</td><td></td></tr>
+<tr><td colspan="6"><i><a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a></i></td></tr>
+<tr><td colspan="6"><a href="../../ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a></td></tr>
+<tr><td>3</td><td>ListValues</td><td><a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a></td><td>? L[1:?]</td><td>
+List of property values.
+
+
+</td><td>X</td></tr>
+<tr><td>4</td><td>Unit</td><td><a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a></td><td>? </td><td>
+Unit for the list values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject.
+</td><td>X</td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a>&quot; type=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a>&quot; substitutionGroup=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;ListValues&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot; maxOccurs=&quot;unbounded&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:itemType&quot; fixed=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:cType&quot; fixed=&quot;list&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute ref=&quot;ifc:arraySize&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name=&quot;Unit&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:group ref=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:complexType&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:element&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/xs:extension&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcPropertyListValue<br/>
+&nbsp;<span class="keyword">SUBTYPE OF</span> (<a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a>)<b>;</b><br/>
+&nbsp;&nbsp;ListValues : <span class="keyword">OPTIONAL</span> <span class="keyword">LIST</span> [1:?] <span class="keyword">OF</span> <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>;<br/>
+&nbsp;&nbsp;Unit : <span class="keyword">OPTIONAL</span> <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a>;<br/>
+&nbsp;<span class="keyword">WHERE</span><br/>
+&nbsp;&nbsp;WR31 : SIZEOF(QUERY(temp &lt;* SELF.ListValues | <br/>
+  NOT(TYPEOF(SELF.ListValues[1]) = TYPEOF(temp))<br/>
+  )) = 0;<br/><span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcpropertyresource/diagram_0000.html" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+<details><summary>JSON Specification</summary><div class="xsd"><code class="xsd">public class <a href="../../ifcpropertyresource/lexical/ifcpropertylistvalue.html">IfcPropertyListValue</a> extends <a href="../../ifcpropertyresource/lexical/ifcsimpleproperty.html">IfcSimpleProperty</a><br/>
+{<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcvalue.html">IfcValue</a>[] ListValues;<br/>
+&nbsp;private <a href="../../ifcmeasureresource/lexical/ifcunit.html">IfcUnit</a> Unit;<br/>
+}<br/>
+</code></div></details>
+</section>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifcpropertylistvalue:%22" target="_blank" ><img src="../../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../../link/ifcpropertylistvalue.html" target="_blank" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Object Attributes</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-4.html#4.9");
+//-->
+</script>
+
+<h2 class="std">4.9 Object Attributes</h2>
+<p>All entities having semantic significance derive from <a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>, where instances are identifiable within a data set using a compressed globally unique identifier (IFC-GUID). This identifier must never change during the lifetime of an object, which allows data to be merged, versioned, or referenced from other locations.</p>
+<p>Resource-level instances (not deriving from <a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>) do not have any identity, such that two instances having identical state are considered equal. For example, if an object has coordinates described by an <i>IfcCartesianPoint</i> instance, another object with the same coordinates may have a separate instance of <i>IfcCartesianPoint</i> or share the same instance; such difference is a matter of data storage optimization and does not imply any semantic relationship. This also implies that non-rooted instances may only exist if referenced by at least one rooted instance through either a direct attribute or inverse attribute, or following a chain of attribute references on instances.</p>
+<p>The distinction between rooted and non-rooted (resource-level) entities achieves several goals:</p>
+<p class="ref">
+\X\X\\\\* Database retrieval may be more efficient by storing non-rooted data local to rooted data instances;
+Ø\X\\\\* Comparisons of differences may be done at a higher level where the context of such change is apparent;</p>
+<details><summary>mvdXML Specification</summary><div class="xsd"><code class="xsd">
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>
+&lt;ConceptTemplate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; uuid=&quot;ccb45aa2-74e1-46e8-8e35-ca5e5d7cc9dd&quot; name=&quot;Object Attributes&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;SubTemplates&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ConceptTemplate uuid=&quot;f7cb0a08-fee7-4cc0-85fe-43f6a6a0bce1&quot; name=&quot;Software Identity&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Rules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;GUID&quot; AttributeName=&quot;GlobalId&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRule EntityName=&quot;<a href="../ifcutilityresource/lexical/ifcgloballyuniqueid.html">IfcGloballyUniqueId</a>&quot; /&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Rules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ConceptTemplate&gt;<br/>
+&nbsp;&nbsp;&lt;/SubTemplates&gt;<br/>
+&lt;/ConceptTemplate&gt;<br/>
+</code></div>
+</details>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=object-attributes:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/object-attributes.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

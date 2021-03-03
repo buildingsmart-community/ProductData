@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Object Typing</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-4.html#4.7.1");
+//-->
+</script>
+
+<h3 class="std">4.7.1 Object Typing</h3>
+<p>Object occurrences can be defined by a particular object type, using the <i>Object Typing</i> concept. A pair of entities are defined for most semantic objects - an object occurrence entity and a corresponding object type entity.</p>
+<blockquote class="example">
+<p>EXAMPLE  The <i>IfcTank</i> is the object occurrence entity that has a corresponding <i>IfcTankType</i> being the object type entity.</p>
+</blockquote>
+<p>On instance level, an object occurrence instance may have:</p>
+<p>\X\X\\\\\\* overridden state for particular characteristics;
+\X\X\X\X\X\X\X\X\\\\\\* common naming and predefined type;
+\X\X\\\\\\* common geometry representations, applied as mapped representation to each occurences;
+\X\X\\\\\\* common definition of a decomposition structure.</p>
+<p>Many object occurrence and object type entities have an attribute named <i>PredefinedType</i> consisting of a specific enumeration. Such predefined type essentially provides another level of inheritance to further differentiate objects without the need for additional entities. Predefined types are not just informational; various rules apply such as applicable property sets, part composition, and distribution ports. If the object is typed by an <a href="../ifckernel/lexical/ifctypeobject.html">IfcTypeObject</a>, then the <i>PredefinedType</i> at the <a href="../ifckernel/lexical/ifcobject.html">IfcObject</a> occurrence shall only be used if the <i>PredefinedType</i> at <a href="../ifckernel/lexical/ifctypeobject.html">IfcTypeObject</a> is set to <i>NOTDEFINED</i>.</p>
+<blockquote class="example">
+<p>EXAMPLE  For scenarios of object types having part compositions, such parts may be reflected at object occurrences having separate state. For example, a <i>wall type</i> may define a particular arrangement of studs, a <i>wall occurrence</i> may reflect the same arrangement of studs, and studs within the wall occurrence may participate in specific relationships that do not exist at the type such as being connected to an electrical junction box.</p>
+</blockquote>
+<blockquote class="note">
+<p>NOTE  If the object type has aggregated elements, such objects are reflected at the object occurrence using the <i>IfcRelDefinesByObject</i> relationship.</p>
+</blockquote>
+<p class="fig-ref">Figure 29 illustrates an instance diagram.</p>
+<table><tr><td><img alt="Object Typing" src="./diagrams/object-typing.png" usemap="#f29"><map name="f29"><area shape="rect" coords="8,8,176,212" href="../ifckernel/lexical/ifcobject.html" alt="IfcObject" /><area shape="rect" coords="208,8,376,92" href="../ifckernel/lexical/ifcreldefinesbytype.html" alt="IfcRelDefinesByType" /><area shape="rect" coords="408,8,576,188" href="../ifckernel/lexical/ifctypeobject.html" alt="IfcTypeObject" /></map></td></tr><tr><td><p class="figure">Figure 29 &mdash; Object Typing</p></td></tr></table>
+
+<hr/>
+<h4>Construction Objects Data View</h4>
+<p>This concept shall be applied as follows to the exchanges. All inherited classes from the classes shown in the figure can be instanciated.</p>
+<table class="exchange">
+<tr><th>Entity </th><th style="text-align: center"><a href="../views/construction-objects-data-view/catalogue-of-configured-construction-objects-exchange.html"><img width="16" src="../../img/mvd-catalogue-of-configured-construction-objects-exchange.png" title="Catalogue of configured construction objects exchange"/></a><br>Catalogue of configured construction objects exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-sheet-exchange.html"><img width="16" src="../../img/mvd-data-sheet-exchange.png" title="Data sheet exchange"/></a><br>Data sheet exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-template-exchange.html"><img width="16" src="../../img/mvd-data-template-exchange.png" title="Data template exchange"/></a><br>Data template exchange</th>
+</tr><tr><td><a href="../ifckernel/lexical/ifcobject.html">IfcObject</a></td><td style="text-align:center">optional on import<br/>optional on export</td>
+<td style="text-align:center">optional on import<br/>optional on export</td>
+<td style="text-align:center">excluded on import<br/>excluded on export</td>
+</tr>
+</table>
+<details><summary>mvdXML Specification</summary><div class="xsd"><code class="xsd">
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>
+&lt;ConceptTemplate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; uuid=&quot;35a2e10e-20df-40f4-ab2f-dacf0a6744f4&quot; name=&quot;Object Typing&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifckernel/lexical/ifcobject.html">IfcObject</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;Rules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;HasType&quot; AttributeName=&quot;IsTypedBy&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRule EntityName=&quot;<a href="../ifckernel/lexical/ifcreldefinesbytype.html">IfcRelDefinesByType</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;RelatingType&quot; AttributeName=&quot;RelatingType&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EntityRule RuleID=&quot;TypeName&quot; EntityName=&quot;<a href="../ifckernel/lexical/ifctypeobject.html">IfcTypeObject</a>&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule RuleID=&quot;TypeName&quot; AttributeName=&quot;Name&quot; /&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/EntityRules&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AttributeRule&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;AttributeRule AttributeName=&quot;PredefinedType&quot; /&gt;<br/>
+&nbsp;&nbsp;&lt;/Rules&gt;<br/>
+&lt;/ConceptTemplate&gt;<br/>
+</code></div>
+</details>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=object-typing:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/object-typing.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

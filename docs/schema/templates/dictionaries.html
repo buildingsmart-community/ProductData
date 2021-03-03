@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Dictionaries</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-4.html#4.10.1");
+//-->
+</script>
+
+<h3 class="std">4.10.1 Dictionaries</h3>
+<p>The prEN ISO 23387 defines a standardized way to express construction data with the concept of data templates. Such data templates can be used to structure the information, based on external standards. Data templates include well defined properties according to prEN ISO 23386.
+The definitions for propertiesc and data template can be stored in central dictionaries according to data structure, defined in ISO 12006-3, from where they can be retrieved and used in projects.</p>
+<figure>
+  <img src="../../figures/illustration2_datatemplates.png" width="650" alt="Illustration 2: Use data templates and data to create combinded construction objects data">
+  <figcaption>Illustration 2: Use data templates and data to create combinded construction objects data</figcaption>
+</figure>
+<p>To use the properties and data templates from dictionaries in the construction objects data view, the properties and data templates shall be mapped from the structure of the prEN ISO 23387 (Illustration 2) to the structure of this standard.
+The following table defines, how the entities shall be mapped. The table shows a simplified mapping structure, based on the follwing remarks. The referenced classes in the second column (“WI 442018”) are based on the structures that are described in the other parts of the chapter “Fundamental concepts and assumptions”. The listed classes always reference to the top class in the class structure. All inherited classes from the top class are always allowed.</p>
+<figure>
+  <img src="../../figures/illustration03.png" width="650" alt="Illustration 3: Mapping xtdBag to IfcProjectLibrary">
+  <figcaption>Illustration 3: Mapping xtdBag to IfcProjectLibrary</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration04.png" width="650" alt="Illustration 4: Mapping xtdExternalDocument to IfcDocumentInformation">
+  <figcaption>Illustration 4: Mapping xtdExternalDocument to Document Information</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration05.png" width="650" alt="Illustration 5: Mapping xtdBag to IfcProjectLibrary">
+  <figcaption>Illustration 5: Mapping xtdClass to Classification Reference</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration06.png" width="650" alt="Illustration 6: Mapping xtdExternalDocument to IfcDocumentInformation">
+  <figcaption>Illustration 6: Mapping xtdSubject to Construction object type</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration07.png" width="650" alt="Illustration 7: Mapping xtdBag to IfcProjectLibrary">
+  <figcaption>Illustration 7: Mapping xtdNest to Property Set Template</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration08.png" width="650" alt="Illustration 8: Mapping xtdExternalDocument to IfcDocumentInformation">
+  <figcaption>Illustration 8: Mapping xtdProperty to Complex data template</figcaption>
+</figure><figure>
+  <img src="../../figures/dict_illustration09.png" width="650" alt="Illustration 9: Mapping xtdBag to IfcProjectLibrary">
+  <figcaption>Illustration 9: Mapping xtdProperty to Simple data template</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration10.png" width="650" alt="Illustration 10: Mapping xtdExternalDocument to IfcDocumentInformation">
+  <figcaption>Illustration 10: Mapping xtdMeasureWithUnit to Measure</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration11.png" width="650" alt="Illustration 11: Mapping xtdBag to IfcProjectLibrary">
+  <figcaption>Illustration 11: Mapping xtdUnit to Measure</figcaption>
+</figure><figure>
+  <img src="../../figures/illustration12.png" width="650" alt="Illustration 12: Mapping xtdExternalDocument to IfcDocumentInformation">
+  <figcaption>Illustration 12: Mapping xtdValueEnumeration to values</figcaption>
+</figure>
+<hr/>
+<h4>Construction Objects Data View</h4>
+<p>This concept shall be applied as follows to the exchanges. All inherited classes from the classes shown in the figure can be instanciated.</p>
+<table class="exchange">
+<tr><th>Entity </th><th style="text-align: center"><a href="../views/construction-objects-data-view/catalogue-of-configured-construction-objects-exchange.html"><img width="16" src="../../img/mvd-catalogue-of-configured-construction-objects-exchange.png" title="Catalogue of configured construction objects exchange"/></a><br>Catalogue of configured construction objects exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-sheet-exchange.html"><img width="16" src="../../img/mvd-data-sheet-exchange.png" title="Data sheet exchange"/></a><br>Data sheet exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-template-exchange.html"><img width="16" src="../../img/mvd-data-template-exchange.png" title="Data template exchange"/></a><br>Data template exchange</th>
+</tr><tr><td><a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a></td><td style="text-align:center">required on import<br/>required on export</td>
+<td style="text-align:center">required on import<br/>required on export</td>
+<td style="text-align:center">required on import<br/>required on export</td>
+</tr>
+</table>
+<details><summary>mvdXML Specification</summary><div class="xsd"><code class="xsd">
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>
+&lt;ConceptTemplate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; uuid=&quot;9ae07d72-0ea7-414e-91e0-57afed5a0d89&quot; name=&quot;Dictionaries&quot; status=&quot;candidate&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>&quot; /&gt;<br/>
+</code></div>
+</details>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=dictionaries:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/dictionaries.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

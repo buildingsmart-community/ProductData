@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcConstraint</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 3 index3 3 index4 0 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.html#8.3.3.1");
+//-->
+</script>
+
+<h4 class="num">IfcConstraint</h4>
+<a href="../../views/construction-objects-data-view/index.html" ><img src="../../../img/view-construction-objects-data-view.png" title="Construction Objects Data View"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-de.png" /></td><td><b>Beschränkung</b></td></tr>
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Constraint</b></td></tr>
+<tr><td><img src="../../../img/locale-fr.png" /></td><td><b>Contrainte</b></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p>An <span class="self-ref">IfcConstraint</span> is used to define a constraint or limiting value or boundary condition that may be applied to an object or to the value of a property.</p>
+<p>Constraints may be subdivided into user-defined constraints and system-defined constraints. User-defined constraints are applied by a user and are restricted to high-level definitions such as object properties. System-defined constraints may apply to any object attribute, are typically defined by an application to enforce data validation or parametric behavior, and are intended to be enforced by applications but not to be directly editable by an end-user.</p>
+<p><span class="self-ref">IfcConstraint</span> may be associated with any subtype of <a href="../../ifckernel/lexical/ifcobjectdefinition.html">IfcObjectDefinition</a> or <a href="../../ifckernel/lexical/ifcpropertydefinition.html">IfcPropertyDefinition</a> through the <i>IfcRelAssociatesConstraint</i> relationship to indicate a system-defined constraint, or may be associated with <a href="../../ifcexternalreferenceresource/lexical/ifcresourceobjectselect.html">IfcResourceObjectSelect</a> (such as <a href="../../ifcpropertyresource/lexical/ifcpropertysinglevalue.html">IfcPropertySingleValue</a>) by <i>IfcResourceConstraintRelationship</i> to indicate a user-defined constraint.</p>
+<p>A constraint must have a name applied through the <i>IfcConstraint.Name</i> attribute and optionally, a description through <i>IfcConstraint.Description</i>. The grade of the constraint (hard, soft, advisory) must be specified through <i>IfcConstraint.ConstraintGrade</i> or <i>IfcConstraint.UserDefinedGrade</i> whilst the source, creating actor and time at which the constraint is created may be optionally asserted through <i>IfcConstraint.ConstraintSource</i>, <i>IfcConstraint.CreatingActor</i> and <i>IfcConstraint.CreationTime</i>.</p>
+<p>A constraint may also have additional external information (such as classification or document information) associated to it by <a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a>, accessible through inverse attribute <i>IfcConstraint.HasExternalReferences</i></p>
+
+
+</details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>C</th></tr>
+<tr><td>1</td><td>Name</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.html">IfcLabel</a></td><td></td><td>
+A human-readable name to be used for the constraint.
+</td><td>X</td></tr>
+<tr><td>2</td><td>Description</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>3</td><td>ConstraintGrade</td><td><a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a></td><td></td><td>
+Enumeration that qualifies the type of constraint.
+</td><td>X</td></tr>
+<tr><td>4</td><td>ConstraintSource</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>5</td><td>CreatingActor</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>6</td><td>CreationTime</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>7</td><td>UserDefinedGrade</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td></td><td><i>HasExternalReferences</i></td><td><a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a><br/>@RelatedResourceObjects</td><td>S[0:?]</td><td>Reference to an external references, e.g. library, classification, or document information, that are associated to the constraint.
+
+
+</td><td></td></tr>
+</table>
+</details>
+<details open="open"><summary>Formal Propositions</summary><table class="propositions">
+<tr><th>Rule</th><th>Description</th></tr>
+<tr><td>WR11</td><td>The attribute UserDefinedGrade must be asserted when the value of the IfcConstraintGradeEnum is set to USERDEFINED.
+</td></tr>
+</table>
+
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcconstraint.png" usemap="#f"/>
+<map name="f">
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>C</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a></i></td></tr>
+<tr><td>1</td><td>Name</td><td><a href="../../ifcmeasureresource/lexical/ifclabel.html">IfcLabel</a></td><td></td><td>
+A human-readable name to be used for the constraint.
+</td><td>X</td></tr>
+<tr><td>2</td><td>Description</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>3</td><td>ConstraintGrade</td><td><a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a></td><td></td><td>
+Enumeration that qualifies the type of constraint.
+</td><td>X</td></tr>
+<tr><td>4</td><td>ConstraintSource</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>5</td><td>CreatingActor</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>6</td><td>CreationTime</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td>7</td><td>UserDefinedGrade</td><td><span class="self-ref">-</span></td><td></td><td>
+<i>This attribute is out of scope for this model view definition and shall not be set.</i></td><td></td></tr>
+<tr><td></td><td><i>HasExternalReferences</i></td><td><a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a><br/>@RelatedResourceObjects</td><td>S[0:?]</td><td>Reference to an external references, e.g. library, classification, or document information, that are associated to the constraint.
+
+
+</td><td></td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a>&quot; type=&quot;ifc:<a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a>&quot; abstract=&quot;true&quot; substitutionGroup=&quot;ifc:Entity&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a>&quot; abstract=&quot;true&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:Entity&quot;&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;Name&quot; type=&quot;ifc:<a href="../../ifcmeasureresource/lexical/ifclabel.html">IfcLabel</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute name=&quot;ConstraintGrade&quot; type=&quot;ifc:<a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a>&quot; use=&quot;optional&quot;/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;/xs:extension&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcConstraint<br/>
+&nbsp;&nbsp;Name : <a href="../../ifcmeasureresource/lexical/ifclabel.html">IfcLabel</a>;<br/>
+&nbsp;&nbsp;Description : <span class="keyword">OPTIONAL</span> <span class="self-ref">IfcStrippedOptional</span>;<br/>
+&nbsp;&nbsp;ConstraintGrade : <a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a>;<br/>
+&nbsp;&nbsp;ConstraintSource : <span class="keyword">OPTIONAL</span> <span class="self-ref">IfcStrippedOptional</span>;<br/>
+&nbsp;&nbsp;CreatingActor : <span class="keyword">OPTIONAL</span> <span class="self-ref">IfcStrippedOptional</span>;<br/>
+&nbsp;&nbsp;CreationTime : <span class="keyword">OPTIONAL</span> <span class="self-ref">IfcStrippedOptional</span>;<br/>
+&nbsp;&nbsp;UserDefinedGrade : <span class="keyword">OPTIONAL</span> <span class="self-ref">IfcStrippedOptional</span>;<br/>
+&nbsp;<span class="keyword">INVERSE</span><br/>
+&nbsp;&nbsp;HasExternalReferences : <span class="keyword">SET</span> [0:?] OF <a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a> <span class="keyword">FOR</span> RelatedResourceObjects;<br/>
+&nbsp;<span class="keyword">WHERE</span><br/>
+&nbsp;&nbsp;WR11 : (ConstraintGrade &lt;&gt; <a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a>.USERDEFINED) OR<br/>
+((ConstraintGrade = <a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a>.USERDEFINED) AND EXISTS(SELF\<a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a>.UserDefinedGrade));<br/><span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcconstraintresource/diagram_0000.html" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+<details><summary>JSON Specification</summary><div class="xsd"><code class="xsd">public class <a href="../../ifcconstraintresource/lexical/ifcconstraint.html">IfcConstraint</a> extends IfcBase<br/>
+{<br/>
+&nbsp;private string Name;<br/>
+&nbsp;private string Description;<br/>
+&nbsp;private <a href="../../ifcconstraintresource/lexical/ifcconstraintenum.html">IfcConstraintEnum</a> ConstraintGrade;<br/>
+&nbsp;private string ConstraintSource;<br/>
+&nbsp;private <a href="../../ifcactorresource/lexical/ifcactorselect.html">IfcActorSelect</a> CreatingActor;<br/>
+&nbsp;private string CreationTime;<br/>
+&nbsp;private string UserDefinedGrade;<br/>
+&nbsp;private <a href="../../ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.html">IfcExternalReferenceRelationship</a>[] HasExternalReferences;<br/>
+&nbsp;private <span class="self-ref">IfcStrippedOptional</span>[] PropertiesForConstraint;<br/>
+}<br/>
+</code></div></details>
+</section>
+<p><img src="../../../img/external.png" style="border: 0px" title="References" alt="References"/>&nbsp; References: <a href="../../ifcexternalreferenceresource/lexical/ifcresourceobjectselect.html">IfcResourceObjectSelect</a>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifcconstraint:%22" target="_blank" ><img src="../../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../../link/ifcconstraint.html" target="_blank" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

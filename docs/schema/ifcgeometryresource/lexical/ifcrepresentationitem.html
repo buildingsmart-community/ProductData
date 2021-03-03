@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../../details-shim.css">
+    <script type="text/javascript" src="../../../details-shim.js"></script>
+    <title>IfcRepresentationItem</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 8 index2 7 index3 3 index4 0 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../../toc-8.html#8.7.3.1");
+//-->
+</script>
+
+<h4 class="num">IfcRepresentationItem</h4>
+<a href="../../views/construction-objects-data-view/index.html" ><img src="../../../img/view-construction-objects-data-view.png" title="Construction Objects Data View"/></a>
+<details open="open"><summary>Natural language names</summary><table>
+<table class="gridtable">
+<tr><td><img src="../../../img/locale-de.png" /></td><td><b>Repräsentationselement</b></td></tr>
+<tr><td><img src="../../../img/locale-en.png" /></td><td><b>Representation Item</b></td></tr>
+<tr><td><img src="../../../img/locale-fr.png" /></td><td><b>Item de représentation</b></td></tr>
+</table>
+</details>
+<section>
+<h5 class="num">Semantic definitions at the entity</h5>
+<details open="open"><summary>Entity definition</summary><p>The <span class="self-ref">IfcRepresentationItem</span> is used within an <a href="../../ifcrepresentationresource/lexical/ifcrepresentation.html">IfcRepresentation</a> (directly or indirectly through other <span class="self-ref">IfcRepresentationItem</span>'s) to represent an <a href="../../ifcrepresentationresource/lexical/ifcproductrepresentation.html">IfcProductRepresentation</a>. Most commonly these <span class="self-ref">IfcRepresentationItem</span>'s are geometric or topological representation items, that can (but not need to) have presentation style infomation assigned.</p>
+
+<blockquote class="note">
+<p>NOTE  The assignment of a style is only applicable to the subtypes <i>IfcGeometricRepresentationItem</i>, <i>IfcMappedItem</i> and some selected subtypes of <i>IfcTopologicalRepresentationItem</i> (<i>IfcVertexPoint</i>, <i>IfcEdgeCurve</i>, <i>IfcFaceSurface</i>).</p>
+</blockquote>
+<p>In case that presentation style information is applied, it can be either applied by an <i>IfcStyledItem</i>, or by an assignment to an <i>IfcPresentationLayerWithStyle</i>. If both are present, and both style assignments include the same subtype of <i>IfcPresentationStyle</i>, then the style assigned by <i>IfcStyledItem</i> takes priority.</p>
+<p>Figure 46 shows an instance diagram explaining the use of <i>IfcStyledItem</i> and <i>IfcPresentationLayerWithStyle</i> to apply presentation styles.</p>
+<blockquote class="example">
+<p>EXAMPLE  The assignment of style information by a styled item and a presentation layer with style. Since the presentation styles are different, <i>IfcCurveStyle</i> and <i>IfcSurfaceStyle</i>, both are applied to the geometric representation item.</p>
+</blockquote>
+<p><table><tr><td style="width: 600px"><img src="../../../figures/ifcrepresentationitem_style-1.png" alt="&quot;styles assigned by layer and styled item&quot;" title="Figure 46 &mdash; Representation item style"></td></tr><tr><td><p class="figure">Figure 46 &mdash; Representation item style</p></td></tr></table></p>
+<p>Figure 47 shows in instance diagram explaining the override of <i>IfcPresentationLayerWithStyle</i> by <i>IfcStyledItem</i> to apply presentation styles.</p>
+<blockquote class="example">
+<p>EXAMPLE  The assignment of style information by a styled item and a presentation layer with style. Since the presentation styles for curve style are aprovided by both, the <i>IfcCurveStyle</i> provided by the <i>IfcStyledItem</i> overrides the <i>IfcCurveStyle</i> provided by the <i>IfcPresentationLayerWithStyle</i></p>
+</blockquote>
+<p><table><tr><td style="width: 600px"><img src="../../../figures/ifcrepresentationitem_style-2.png" alt="&quot;styles assigned by layer and styled item&quot;" title="Figure 47 &mdash; Representation item style override"></td></tr><tr><td><p class="figure">Figure 47 &mdash; Representation item style override</p></td></tr></table></p>
+<blockquote class="note">
+<p>NOTE  Entity adapted from \\\\\\*representation_map\\\\\\* defined in ISO 10303-43.</p>
+</blockquote>
+
+
+</details>
+<details open="open"><summary>Attribute definitions</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th>
+<th>C</th></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Inherited definitions from supertypes</h5>
+<details open="open"><summary>Entity inheritance</summary><img src="../../../diagrams/ifcrepresentationitem.png" usemap="#f"/>
+<map name="f">
+</map>
+</details>
+<details><summary>Attribute inheritance</summary><table class="attributes">
+<tr><th>#</th><th>Attribute</th><th>Type</th><th>Cardinality</th><th>Description</th><th>C</th></tr>
+<tr><td colspan="6"><i><a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.html">IfcRepresentationItem</a></i></td></tr>
+</table>
+</details>
+</section>
+<section>
+<h5 class="num">Formal representations</h5>
+<details><summary>XML Specification</summary><div class="xsd"><code class="xsd">&nbsp;&lt;xs:element name=&quot;<a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.html">IfcRepresentationItem</a>&quot; type=&quot;ifc:<a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.html">IfcRepresentationItem</a>&quot; abstract=&quot;true&quot; substitutionGroup=&quot;ifc:Entity&quot; nillable=&quot;true&quot;/&gt;<br/>
+&nbsp;&lt;xs:complexType name=&quot;<a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.html">IfcRepresentationItem</a>&quot; abstract=&quot;true&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;xs:complexContent&gt;<br/>
+&nbsp;&nbsp;&nbsp;&lt;xs:extension base=&quot;ifc:Entity&quot;/&gt;<br/>
+&nbsp;&nbsp;&lt;/xs:complexContent&gt;<br/>
+&nbsp;&lt;/xs:complexType&gt;<br/>
+</code></div></details>
+<details><summary>EXPRESS Specification</summary><div class="express"><code class="express">
+<span class="keyword">ENTITY</span> IfcRepresentationItem<br/>
+&nbsp;<span class="keyword">INVERSE</span><br/>
+<span class="keyword">END_ENTITY;</span><br/>
+<p class="std"><a href="../../../annex/annex-d/ifcgeometryresource/diagram_0000.html" ><img src="../../../img/diagram.png" style="border: 0px" title="Link to EXPRESS-G diagram" alt="Link to EXPRESS-G diagram">&nbsp;EXPRESS-G diagram</a></p>
+</code></div>
+</details>
+<details><summary>JSON Specification</summary><div class="xsd"><code class="xsd">public class <a href="../../ifcgeometryresource/lexical/ifcrepresentationitem.html">IfcRepresentationItem</a> extends IfcBase<br/>
+{<br/>
+&nbsp;private <span class="self-ref">IfcStrippedOptional</span>[] LayerAssignment;<br/>
+&nbsp;private <span class="self-ref">IfcStrippedOptional</span>[] StyledByItem;<br/>
+}<br/>
+</code></div></details>
+</section>
+<p><img src="../../../img/external.png" style="border: 0px" title="References" alt="References"/>&nbsp; References: <a href="../../ifcrepresentationresource/lexical/ifcrepresentation.html">IfcRepresentation</a>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=ifcrepresentationitem:%22" target="_blank" ><img src="../../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../../link/ifcrepresentationitem.html" target="_blank" ><img src="../../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

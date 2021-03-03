@@ -1,0 +1,399 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../details-shim.css">
+    <script type="text/javascript" src="../details-shim.js"></script>
+    <title>Fundamental concepts and assumptions</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 3 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("toc-4.html#");
+//-->
+</script>
+
+<h1 class="num" id="scope">Fundamental concepts and assumptions</h1>
+<p>The smart transport of product data needs a clear and common understanding of the format to express the data of the products itself. The product data can be transferred in several ways, e.g. via direct database connect, or via webservices or file transfer. In all cases, the sender and the receiver of the product data need a basic standard to implement the data transfer.</p>
+<p>Normally an IFC files is known as a structure to transport a data model of a construction like a building (or a bridge). This model contains the geometrical and alphanumeric information of the complete building. The model contains also the information about the products that should be used to build up the building. The IFC language is capable to store the information of this “built-in” products properly.</p>
+<p>This standard uses the IFC language to store and transport product data on the way from the manufacturers to their customers.</p>
+<p>To store product data in an IFC file only some parts of the existing IFC namespace is needed, since many aspects of the BIM data are not needed to express product data. The subset of IFC structures for storing and transporting product data is described in the Model View Definition (MVD)</p>
+<details open="open"><summary>Concept templates</summary><table class="gridtable">
+<tr><th>Template</th>
+<th>Construction Objects Data View</th>
+</tr>
+<tr><td>
+<a href="../schema/templates/construction-object-types-data.html">Construction object types data</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/construction-object-types-decomposition.html">Construction object types decomposition</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/type-system-assignment.html">Type system assignment</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/construction-objects-data.html">Construction objects data</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/construction-object-decomposition.html">Construction object decomposition</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/construction-object-filling.html">Construction object filling</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/data.html">Data</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/explicit-property-units.html">Explicit property units</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/system-assignment.html">System assignment</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/data-templates.html">Data templates</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/complex-data-template.html">Complex data template</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/explicit-property-template-units.html">Explicit property template units</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/property-template-classification-association.html">Property template classification association</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/property-template-document-association.html">Property template document association</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/simple-data-template.html">Simple data template</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/declarations.html">Declarations</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/declaration-for-data-template-exchange.html">Declaration for data template exchange</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/declaration-of-classification.html">Declaration of classification</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/declaration-of-construction-object-types.html">Declaration of construction object types</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/declaration-of-construction-objects.html">Declaration of construction objects</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/declaration-of-property-templates.html">Declaration of property templates</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/documents.html">Documents</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/document-classfication.html">Document classfication</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/document-information.html">Document information</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/object-association.html">Object Association</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/classification-association.html">Classification Association</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/document-association.html">Document Association</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/material-layer-set.html">Material Layer Set</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-layer-set-usage.html">Material Layer Set Usage</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-layer-set.html">Material Layer Set</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-profile-set-usage.html">Material Profile Set Usage</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-profile-set.html">Material Profile Set</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-single.html">Material Single</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/object-definition.html">Object Definition</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/object-typing.html">Object Typing</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/property-sets.html">Property Sets</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/property-sets-for-objects.html">Property Sets for Objects</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="../schema/templates/property-sets-with-override.html">Property Sets with Override</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/property-sets-for-types.html">Property Sets for Types</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/project-context.html">Project Context</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/measures-and-units.html">Measures and units</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/project-document-information.html">Project Document Information</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+<a href="../schema/templates/root-concepts.html">Root concepts</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/dictionaries.html">Dictionaries</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/shapes.html">Shapes</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/software-identity.html">Software Identity</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/transport.html">Transport</a>
+</td>
+<td>X</td>
+</tr>
+</table>
+</details>
+<p>
+<details open="open"><summary>Partial templates in use</summary><table class="gridtable">
+<tr><th>Template</th>
+<th>Construction Objects Data View</th>
+</tr>
+<tr><td>
+<a href="../schema/templates/partial-templates.html">Partial Templates</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/material-styles.html">Material Styles</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-surface-style.html">Material Surface Style</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="../schema/templates/material-surface-color-style.html">Material Surface Color Style</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+<a href="../schema/templates/values.html">Values</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/bounded-value.html">Bounded Value</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/enumerated-value.html">Enumerated Value</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/list-value.html">List Value</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/single-value.html">Single Value</a>
+</td>
+<td>X</td>
+</tr>
+<tr><td>
+&nbsp;
+&nbsp;
+<a href="../schema/templates/table-value.html">Table Value</a>
+</td>
+<td>X</td>
+</tr>
+</table>
+</details>
+<p>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=chapter-4:%22" target="_blank" ><img src="../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../link/chapter-4.html" target="_blank" ><img src="../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>

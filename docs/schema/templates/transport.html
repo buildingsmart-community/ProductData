@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="../../ifc-styles.css">
+
+    <link rel="stylesheet" type="text/css" href="../../details-shim.css">
+    <script type="text/javascript" src="../../details-shim.js"></script>
+    <title>Transport</title>
+
+    <style type="text/css">
+      body { counter-reset: index1 0 index2 0 index3 0 index4 -1 index5 0; }
+    </style>
+  </head>
+
+  <body>
+
+
+<script type="text/javascript">
+<!--
+    parent.index.location.replace("../toc-4.html#4.10.4");
+//-->
+</script>
+
+<h3 class="std">4.10.4 Transport</h3>
+<p>All exchanges can be transported over these protocols:</p>
+<ol>
+<li>As a physical file with manual exchange via eMail, hard drives, CDE's or similar</li>
+<li>As a data structure in the payload of an online exchange, eg. an API, a BCF message, a messaging system or similar.</li>
+</ol>
+<p>This standard does not define how exactly the exchange is done. It defines the standard for the structure of the file or the payload. The file or the payload can be stored in a compressd format according to the specification. It is allowed to embed an IFC file in Step format (.ifc) or in XML format Format (.ifcXML) in an ifcZIP file.The specification contains the following principles:</p>
+<ol>
+<li>The ifcZIP file contains exactly one model file (.ifc or .ifcxml). The file extension is ifcZIP</li>
+<li>According to this rule, it is allowed to embed additional other files in an ifcZIP file. Therefore, an ifcZIP file can be a container, which can transport many additional files in itself. This container can transport related photo documentations, plant documentation, permits and notifications, operating documents, maintenance reports and other model related documents.</li>
+</ol>
+<p>The specification of the ifcZIP format allows one model file in the root folder of the ifcZIP file. The documents can be stored relative to the root folder and references with the entity Document Information (IfcDocumentInformation) to the model. For each file transported in the container, an element of type  Document Information (IfcDocumentInformation) is written.</p>
+<hr/>
+<h4>Construction Objects Data View</h4>
+<p>This concept shall be applied as follows to the exchanges. All inherited classes from the classes shown in the figure can be instanciated.</p>
+<table class="exchange">
+<tr><th>Entity </th><th style="text-align: center"><a href="../views/construction-objects-data-view/catalogue-of-configured-construction-objects-exchange.html"><img width="16" src="../../img/mvd-catalogue-of-configured-construction-objects-exchange.png" title="Catalogue of configured construction objects exchange"/></a><br>Catalogue of configured construction objects exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-sheet-exchange.html"><img width="16" src="../../img/mvd-data-sheet-exchange.png" title="Data sheet exchange"/></a><br>Data sheet exchange</th>
+<th style="text-align: center"><a href="../views/construction-objects-data-view/data-template-exchange.html"><img width="16" src="../../img/mvd-data-template-exchange.png" title="Data template exchange"/></a><br>Data template exchange</th>
+</tr><tr><td><a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a></td><td style="text-align:center">required on import<br/>required on export</td>
+<td style="text-align:center">required on import<br/>required on export</td>
+<td style="text-align:center">required on import<br/>required on export</td>
+</tr>
+</table>
+<details><summary>mvdXML Specification</summary><div class="xsd"><code class="xsd">
+&lt;?xml version=&quot;1.0&quot;?&gt;<br/>
+&lt;ConceptTemplate xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; uuid=&quot;1991cde3-11a9-4cc4-aa31-6b1e3883ca26&quot; name=&quot;Transport&quot; status=&quot;candidate&quot; applicableSchema=&quot;IFC4&quot; applicableEntity=&quot;<a href="../ifckernel/lexical/ifcroot.html">IfcRoot</a>&quot; /&gt;<br/>
+</code></div>
+</details>
+</p>
+<p><a href="https://github.com/buildingSMART/ProductData/issues/new?&title=transport:%22" target="_blank" ><img src="../../img/external.png" style="border: 0px" title="Report issue" alt="Report issue"/>&nbsp; Report an issue</a></p>
+<p><a href="../../link/transport.html" target="_blank" ><img src="../../img/permlink.png" style="border: 0px" title="Link to this page" alt="Link to this page"/>&nbsp; Link to this page</a></p>
+  </body>
+</html>
